@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## FreePDK 45 nm process library version 1.2
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tFreePDK 45 nm process library for Cadence."
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"FreePDK 45 nm process library for Cadence"
+
+module load cadence-ic
+
+# for Tcl script use only
+set   version  "1.2"
+set   PDK_DIR   /ad/eng/opt/cadence/FreePDK45
+
+setenv  PDK_DIR $PDK_DIR
+setenv  MGC_CALIBRE_DRC_RUNSET_FILE  ./.runset.calibre.drc
+setenv  MGC_CALIBRE_LVS_RUNSET_FILE  ./.runset.calibre.lvs
+setenv  MGC_CALIBRE_PEX_RUNSET_FILE  ./.runset.calibre.pex
+
+append-path PYTHONPATH $PDK_DIR/ncsu_basekit/techfile/cni

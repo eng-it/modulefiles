@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## Anaconda Scientific Python Distribution
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tLoad settings for Anaconda Scientific Python Distribution."
+	puts stderr "\thttp://collaborate.bu.edu/engit/Grid/Python"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Anaconda Scientific Python Distribution"
+
+# for Tcl script use only
+set     version      "2.0.1-py2.7"
+set     ANACONDA     /ad/eng/opt/64/anaconda-2.0.1-py27
+
+# Don't set PYTHONHOME or PYTHONLIB here; it'll throw off tools like pip when
+# deciding where to put new files.
+prepend-path  PATH             $ANACONDA/bin/
+prepend-path  MANPATH          $ANACONDA/share/man/
+prepend-path  INCLUDE_PATH     $ANACONDA/include/

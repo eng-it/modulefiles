@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## Cadence Quantus QRC
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Quantus QRC Extraction"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Quantus QRC Extraction"
+
+module load cadence
+
+# for Tcl script use only
+set     version    "9.1"
+set     QRC_HOME   "/ad/eng/opt/cadence/EXT91"
+
+prepend-path PATH $QRC_HOME/bin

@@ -1,0 +1,11 @@
+#%Module1.0#####################################################################
+##
+## Cadence - shared setup
+##
+proc ModulesHelp { } {
+        puts stderr "\tShared Cadence settings for multiple packages"
+}
+
+module-whatis	"Cadence settings shared by all packages"
+
+setenv CDS_LIC_FILE 5280@CadenceLM.bu.edu

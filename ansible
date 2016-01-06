@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## Ansible
+##
+proc ModulesHelp { } {
+#        global version
+
+        puts stderr "\tAnsible configuration management tool"
+}
+
+module-whatis	"Ansible configuration management tool"
+
+# for Tcl script use only
+set  ANSIBLE  /ad/eng/opt/64/ansible/
+
+setenv  ANSIBLE_CONFIG  "$ANSIBLE/ansible.cfg"
+setenv  ANSIBLE_HOSTS   "$::env(HOME)/ansible/hosts"
+if { [ file exists "$::env(HOME)/ansible/inventory" ] } {
+	setenv  ANSIBLE_HOSTS  "$::env(HOME)/ansible/inventory"
+}
+prepend-path  PATH  "$ANSIBLE/ansible-bin"

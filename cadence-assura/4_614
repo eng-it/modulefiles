@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## Cadence Assura 4.1 (ASSURA41)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Assura Design Rule Checker"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Assura Design Rule Checker"
+
+module load cadence
+
+# for Tcl script use only
+set     version      "4.1 - 6.1.4"
+set     ASSURAHOME   /ad/eng/opt/cadence/ASSURA4_614
+
+setenv  ASSURAHOME        $ASSURAHOME
+setenv  NO_ASSUME_KERNEL  yes
+prepend-path PATH $ASSURAHOME/tools/bin
+prepend-path PATH $ASSURAHOME/tools/assura/bin

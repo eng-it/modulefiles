@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## Cadence Incisive Unified Simulator 8.2 (IUS82)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Incisive Unified Simulator"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Incisive Unified Simulator"
+
+module load cadence
+
+# for Tcl script use only
+set   version  "8.2"
+set   IUS      /ad/eng/opt/cadence/IUS82
+
+#prepend-path  PATH  $IUS/tools/verilog/bin
+#prepend-path  PATH  $IUS/tools/simvision/bin
+prepend-path  PATH  $IUS/tools/bin

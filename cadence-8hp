@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## Cadence Virtuoso 6.1.4 (IC614)
+##
+proc ModulesHelp { } {
+#        global version
+
+        puts stderr "\tIBM/MOSIS 8hp Process for Cadence"
+#        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"IBM/MOSIS 8hp Process for Cadence"
+
+# Cadence modules that are needed to actually use the 8hp files
+module load cadence-ic
+module load cadence-ext
+module load cadence-assura
+module load cadence-mmsim
+
+# for Tcl script use only
+#set   version  "6.1.4"
+set   AMS      /ad/eng/opt/ibm-cmos/IBM_PDK
+
+setenv AMS $AMS

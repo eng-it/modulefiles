@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## Cadence Virtuoso 6.1.4 (IC614)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Virtuoso Analog Design Environment"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Virtuoso Analog Design Environment"
+
+module load cadence
+
+# for Tcl script use only
+set   version  "6.1.4"
+set   CDS      /ad/eng/opt/cadence/IC614
+
+setenv CDS $CDS
+setenv CDS_Netlisting_Mode Analog
+prepend-path PATH $CDS/tools/bin
+prepend-path PATH $CDS/tools/dfII/bin

@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## Cadence Multi-Mode Simulation 7.2 (MMSIM72)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Multi-Mode Simulation"
+	puts stderr "\t"
+	puts stderr "\tProvides the spectre simulation tool."
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Multi-Mode Simulation (spectre)"
+
+module load cadence
+
+# for Tcl script use only
+set     version  "7.2"
+set     MMSIM    /ad/eng/opt/cadence/MMSIM72
+
+setenv MMSIM $MMSIM
+prepend-path PATH $MMSIM/tools/bin
+prepend-path PATH $MMSIM/bin

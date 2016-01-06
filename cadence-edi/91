@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## Cadence Encounter Digital Implementation System 9.1 (EDI91)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCadence Encounter Digital Implementation"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Cadence Encounter Digital Implementation"
+
+module load cadence
+
+# for Tcl script use only
+set   version  "9.1"
+set   EDI      /ad/eng/opt/cadence/EDI91
+
+setenv EDI $EDI
+prepend-path PATH $EDI/tools/bin
