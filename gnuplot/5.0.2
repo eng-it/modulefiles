@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## Gnuplot
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGnuplot command-line graphing utility."
+	puts stderr "\thttp://www.gnuplot.info"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Gnuplot graphing utility"
+
+# for Tcl script use only
+set     version      "5.0.2"
+set     GNUPLOT      /ad/eng/opt/64/gnuplot-5.0.2
+
+prepend-path  PATH             $GNUPLOT/bin/
+prepend-path  MANPATH          $GNUPLOT/share/man/
