@@ -1,0 +1,64 @@
+#%Module1.0#####################################################################
+##
+## Intel C++ Compiler (Composer XE)
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tIntel Composer XE (C++ Compiler), Educational License"
+	puts stderr "\thttp://collaborate.bu.edu/engit/IntelCompiler"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Intel Composer XE (C++ Compiler), Educational License"
+
+# for Tcl script use only
+set     version      "2011_sp1.8.273"
+set     INTEL        /ad/eng/opt/64/Intel
+set     PROD_DIR     $INTEL/composer_xe_$version
+
+# The below are all taken from what the original setup script did to the
+# environment when sourced:
+# . /ad/eng/support/software/linux/all/x86_64/Intel/bin/iccvars.sh intel64
+
+append-path  LD_LIBRARY_PATH "$PROD_DIR/debugger/lib/intel64"
+prepend-path NLSPATH         "$PROD_DIR/debugger/intel64/locale/%l_%t/%N"
+
+set TBBARCH "cc4.1.0_libc2.4_kernel2.6.16.21"
+set TBBROOT "$PROD_DIR/tbb"
+setenv TBBROOT "$TBBROOT"
+prepend-path LD_LIBRARY_PATH "$TBBROOT/lib/intel64/$TBBARCH"
+prepend-path LIBRARY_PATH    "$TBBROOT/lib/intel64/$TBBARCH"
+prepend-path CPATH           "$TBBROOT/include"
+
+set MKLROOT "$PROD_DIR/mkl"
+setenv MKLROOT "$MKLROOT"
+prepend-path LD_LIBRARY_PATH "$MKLROOT/lib/intel64"
+prepend-path LD_LIBRARY_PATH "$PROD_DIR/compiler/lib/intel64"
+prepend-path LIBRARY_PATH    "$MKLROOT/lib/intel64"
+prepend-path LIBRARY_PATH    "$PROD_DIR/compiler/lib/intel64"
+prepend-path NLSPATH         "$MKLROOT/lib/intel64/locale/%l_%t/%N"
+prepend-path MANPATH         "$PROD_DIR/man/en_US"
+prepend-path INCLUDE         "$MKLROOT/include"
+prepend-path CPATH           "$MKLROOT/include"
+prepend-path FPATH           "$MKLROOT/include"
+
+
+set IPPROOT "$PROD_DIR/ipp"
+setenv IPPROOT "$IPPROOT"
+prepend-path INCLUDE         "$IPPROOT/include"
+prepend-path LD_LIBRARY_PATH "$IPPROOT/lib/intel64"
+prepend-path LIBRARY_PATH    "$IPPROOT/lib/intel64"
+prepend-path LIBRARY_PATH    "$IPPROOT/../compiler/lib/intel64"
+prepend-path NLSPATH         "$IPPROOT/lib/intel64/locale/%l_%t/%N"
+
+prepend-path PATH               "$PROD_DIR/bin/intel64"
+append-path  PATH               "$PROD_DIR/mpirt/bin/intel64"
+prepend-path LD_LIBRARY_PATH    "$PROD_DIR/compiler/lib/intel64"
+append-path  LD_LIBRARY_PATH    "$PROD_DIR/mpirt/lib/intel64"
+prepend-path LIBRARY_PATH       "$PROD_DIR/compiler/lib/intel64"
+prepend-path NLSPATH            "$PROD_DIR/compiler/lib/intel64/locale/%l_%t/%N"
+append-path  INTEL_LICENSE_FILE "$PROD_DIR/licenses"
+append-path  INTEL_LICENSE_FILE "/opt/intel/licenses"
+append-path  INTEL_LICENSE_FILE "$::env(HOME)/intel/licenses"
+prepend-path MANPATH            "$PROD_DIR/man/en_US"
