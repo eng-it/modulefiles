@@ -16,6 +16,8 @@ module-whatis	"GNU Compiler Collection (C and C++ only)"
 set     version      "5.2.1"
 set     GCCDIR       /ad/eng/opt/64/gcc/gcc521
 
+module load binutils
+
 prepend-path  PATH             "$GCCDIR/bin"
 prepend-path  LIBRARY_PATH     "$GCCDIR/lib"
 prepend-path  LD_LIBRARY_PATH  "$GCCDIR/lib"

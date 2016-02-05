@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## GNU Binutils
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Binutils"
+	puts stderr "\thttp://www.gnu.org/software/binutils/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Binutils"
+
+# for Tcl script use only
+set     version      "2.26"
+set     BUDIR        /ad/eng/opt/64/binutils-$version
+
+prepend-path  PATH             "$BUDIR/bin"
+prepend-path  LIBRARY_PATH     "$BUDIR/lib"
+prepend-path  LD_LIBRARY_PATH  "$BUDIR/lib"
+prepend-path  CPATH            "$BUDIR/include"
+prepend-path  MANPATH          "$BUDIR/share/man"
