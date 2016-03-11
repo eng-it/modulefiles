@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## BU proxy server
+##
+proc ModulesHelp { } {
+#        global version
+
+        puts stderr "\tBU proxy server environmental variables"
+}
+
+module-whatis	"BU proxy server environmental variables"
+
+# for Tcl script use only
+set proxypath "http://webproxy.bu.edu:8900"
+
+# Some programs use uppercase environment variables and some use the lowercase
+# for the proxy setting.  So, we'll set both kinds.
+setenv  HTTP_PROXY   "$proxypath"
+setenv  http_proxy   "$proxypath"
+setenv  HTTPS_PROXY  "$proxypath"
+setenv  https_proxy  "$proxypath"
+setenv  FTP_PROXY    "$proxypath"
+setenv  ftp_proxy    "$proxypath"
