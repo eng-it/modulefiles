@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## GNU Libtool
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Libtool"
+	puts stderr "\thttps://www.gnu.org/software/libtool/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Libtool"
+
+# for Tcl script use only
+set     version      "2.4.6"
+set     DIR          "/ad/eng/opt/64/libtool-$version"
+
+prepend-path  PATH             "$DIR/bin"
+prepend-path  MANPATH          "$DIR/share/man"
+prepend-path  LD_LIBRARY_PATH  "$DIR/lib"
+prepend-path  LIBRARY_PATH     "$DIR/lib"
+prepend-path  CPATH            "$DIR/include"
+prepend-path  ACLOCAL_PATH     "$DIR/share/aclocal"

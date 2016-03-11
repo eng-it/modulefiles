@@ -1,0 +1,19 @@
+#%Module1.0#####################################################################
+##
+## GNU build system ("Autotools")
+##
+proc ModulesHelp { } {
+        puts stderr "\tGNU Build System - autoconf/automake/libtool/make/gcc/..."
+	puts stderr "\tThis is a meta-module that loads other modules included"
+	puts stderr "\tin or related to the GNU build system (autotools)."
+}
+
+module-whatis	"GNU Build System - autoconf/automake/libtool/make/gcc/..."
+
+module load gcc
+module load make
+module load automake
+module load autoconf
+module load libtool
+module load binutils
+module load texinfo

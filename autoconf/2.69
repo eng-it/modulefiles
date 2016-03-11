@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## GNU Autoconf
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Autoconf"
+	puts stderr "\thttp://www.gnu.org/software/autoconf/autoconf.html"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Autoconf"
+
+# for Tcl script use only
+set     version      "2.69"
+set     DIR          "/ad/eng/opt/64/autoconf-$version"
+
+prepend-path  PATH     "$DIR/bin"
+prepend-path  MANPATH  "$DIR/share/man"

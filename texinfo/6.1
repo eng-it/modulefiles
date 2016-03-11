@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## GNU Texinfo
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Texinfo"
+	puts stderr "\thttp://www.gnu.org/software/texinfo/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Texinfo"
+
+# for Tcl script use only
+set     version      "6.1"
+set     DIR          "/ad/eng/opt/64/texinfo-$version"
+
+prepend-path  PATH              "$DIR/bin"
+prepend-path  MANPATH           "$DIR/share/man"
+prepend-path  LD_LIBRARY_PATH   "$DIR/lib"

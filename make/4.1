@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## GNU Make
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Make"
+	puts stderr "\thttps://www.gnu.org/software/make/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Make"
+
+# for Tcl script use only
+set     version      "4.1"
+set     DIR          "/ad/eng/opt/64/make-$version"
+
+prepend-path  PATH     "$DIR/bin"
+prepend-path  MANPATH  "$DIR/share/man"
+prepend-path  CPATH    "$DIR/include"

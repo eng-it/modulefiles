@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## GNU Automake
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Automake"
+	puts stderr "\thttps://www.gnu.org/software/automake/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Automake"
+
+# for Tcl script use only
+set     version      "1.15"
+set     DIR          "/ad/eng/opt/64/automake-$version"
+
+prepend-path  PATH     "$DIR/bin"
+prepend-path  MANPATH  "$DIR/share/man"
