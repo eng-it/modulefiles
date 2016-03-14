@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## TeX/LaTeX/BibTeX/etc. 
+##
+proc ModulesHelp { } {
+#        global version
+
+        puts stderr "\tSupporting files for TeX/LaTeX/BibTeX/etc."
+	puts stderr "\t"
+	puts stderr "\tThis will make a directory of third-party LaTeX files"
+	puts stderr "\tavailable for use via your TEXMFHOME setting.  The extra"
+	puts stderr "\ttexmf directory this checks is /ad/eng/opt/tex/texmf/."
+}
+
+module-whatis   "Supporting files for TeX/LaTeX/BibTeX/etc."
+
+# for Tcl script use only
+set  TEXDIR  "/ad/eng/opt/tex/"
+
+prepend-path  TEXMFHOME  "$TEXDIR/texmf"
