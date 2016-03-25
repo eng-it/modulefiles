@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## FFmpeg
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tFFmpeg multimedia framework"
+	puts stderr "\thttps://ffmpeg.org/"
+}
+
+module-whatis   "FFmpeg multimedia framework"
+
+# for Tcl script use only
+set     FFMPEG_DIR  /ad/eng/opt/64/ffmpeg
+
+prepend-path  PATH              "$FFMPEG_DIR/bin"
+prepend-path  MANPATH           "$FFMPEG_DIR/share/man"
+prepend-path  LD_LIBRARY_PATH   "$FFMPEG_DIR/lib"
+prepend-path  LIBRARY_PATH      "$FFMPEG_DIR/lib"
+prepend-path  INCLUDE           "$FFMPEG_DIR/include"
+prepend-path  CPATH             "$FFMPEG_DIR/include"
+prepend-path  PKG_CONFIG_PATH   "$FFMPEG_DIR/lib/pkgconfig"
