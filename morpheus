@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## Morpheus multiscale cell modeling
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tMorpheus multiscale systems biology modeler"
+	puts stderr "\thttps://gitlab.com/morpheus.lab/morpheus"
+}
+
+module-whatis   "Morpheus multiscale systems biology modeler"
+
+# for Tcl script use only
+set     MORPH_DIR    /ad/eng/opt/64/morpheus
+
+# If FFmpeg is available, Morpheus will be able to produce movies with
+# simulation results.
+module load ffmpeg
+
+# Note that we need a custom qt.conf to make Qt work as expected.
+# It's installed in $MORPH_DIR/usr/bin and symlinked to bin as well.
+# http://stackoverflow.com/questions/913642/qmake-and-qt-install-prefix-how-can-i-select-a-new-location-for-qt-library
+prepend-path  PATH              "$MORPH_DIR/bin"
+prepend-path  PATH              "$MORPH_DIR/usr/bin"
+prepend-path  MANPATH           "$MORPH_DIR/man"
+prepend-path  LD_LIBRARY_PATH   "$MORPH_DIR/usr/lib"
+prepend-path  LIBRARY_PATH      "$MORPH_DIR/usr/lib"
+prepend-path  LD_LIBRARY_PATH   "$MORPH_DIR/usr/lib64"
+prepend-path  LIBRARY_PATH      "$MORPH_DIR/usr/lib64"
+prepend-path  INCLUDE           "$MORPH_DIR/usr/include"
+prepend-path  CPATH             "$MORPH_DIR/usr/include"
