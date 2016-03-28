@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## OpenCV
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tOpenCV: Open Source Computer Vision"
+	puts stderr "\thttp://opencv.org/"
+	puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "OpenCV: Open Source Computer Vision"
+
+# for Tcl script use only
+set     version     "3.1.0"
+set     OPENCV_DIR  /ad/eng/opt/64/opencv/$version
+
+# We need to use Anaconda Python (newer Python version with numpy, etc.) for
+# OpenCV support.
+module load anaconda/2.7
+
+prepend-path  PATH              "$OPENCV_DIR/bin"
+prepend-path  LD_LIBRARY_PATH   "$OPENCV_DIR/lib"
+prepend-path  LIBRARY_PATH      "$OPENCV_DIR/lib"
+prepend-path  INCLUDE           "$OPENCV_DIR/include"
+prepend-path  CPATH             "$OPENCV_DIR/include"
+prepend-path  PKG_CONFIG_PATH   "$OPENCV_DIR/lib/pkgconfig"
+prepend-path  PYTHONPATH        "$OPENCV_DIR/lib/python2.7/site-packages"
