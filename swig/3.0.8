@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## SWIG
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tSWIG: Simplified Wrapper and Interface Generator"
+	puts stderr "\thttp://swig.org"
+	puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "SWIG: Simplified Wrapper and Interface Generator"
+
+# for Tcl script use only
+set     version   "3.0.8"
+set     SWIG_DIR  /ad/eng/opt/64/swig-$version
+
+# SWIG hardcodes its library location at compile-time, so the default as
+# reported by swig -swiglib won't work for grid jobs without kerberos access.
+# We can override that with SWIG_LIB here.
+#
+#http://www.swig.org/Doc1.3/Library.html
+
+setenv        SWIG      "$SWIG_DIR"
+setenv        SWIG_LIB  "$SWIG_DIR/share/swig/$version"
+prepend-path  PATH      "$SWIG_DIR/bin"
