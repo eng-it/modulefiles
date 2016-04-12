@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## Gurobi Optimizer
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGurobi optimization solver"
+	puts stderr "\thttp://www.gurobi.com/"
+	puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "Gurobi optimization solver"
+
+# for Tcl script use only
+set     version     "6.5.1"
+set     verstring   "651"
+set     GUROBI_PRE  "/ad/eng/opt/64/gurobi"
+set     GUROBI_DIR  "$GUROBI_PRE/gurobi$verstring"
+
+setenv        GRB_LICENSE_FILE  "$GUROBI_PRE/gurobi.lic"
+setenv        GUROBI_HOME       "$GUROBI_DIR"
+prepend-path  PATH              "$GUROBI_DIR/bin"
+prepend-path  LD_LIBRARY_PATH   "$GUROBI_DIR/lib"
+prepend-path  LIBRARY_PATH      "$GUROBI_DIR/lib"
+prepend-path  INCLUDE           "$GUROBI_DIR/include"
+prepend-path  CPATH             "$GUROBI_DIR/include"
