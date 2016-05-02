@@ -17,6 +17,8 @@ set     version      "5.2.1"
 set     GCCDIR       /ad/eng/opt/64/gcc/gcc521
 
 module load binutils
+module load gmp
+module load mpfr
 
 prepend-path  PATH             "$GCCDIR/bin"
 prepend-path  LIBRARY_PATH     "$GCCDIR/lib"
