@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## GNU Multiple Precision Library
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Multiple Precision Library"
+	puts stderr "\thttps://gmplib.org/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Multiple Precision Library"
+
+# for Tcl script use only
+set     version      "4.3.2"
+set     GMPDIR       /ad/eng/opt/64/gmp-$version
+
+prepend-path  LIBRARY_PATH     "$GMPDIR/lib"
+prepend-path  LD_LIBRARY_PATH  "$GMPDIR/lib"
+prepend-path  CPATH            "$GMPDIR/include"
+prepend-path  INFOPATH         "$GMPDIR/share/info"
