@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## GNU Multiple Precision Floating Point Library
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU Multiple Precision Floating Point Library"
+	puts stderr "\thttp://www.mpfr.org/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU Multiple Precision Floating Point Library"
+
+# for Tcl script use only
+set     version      "2.4.2"
+set     MPFRDIR      /ad/eng/opt/64/mpfr-$version
+
+prepend-path  LIBRARY_PATH     "$MPFRDIR/lib"
+prepend-path  LD_LIBRARY_PATH  "$MPFRDIR/lib"
+prepend-path  CPATH            "$MPFRDIR/include"
+prepend-path  INFOPATH         "$MPFRDIR/share/info"
