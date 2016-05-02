@@ -22,6 +22,9 @@ set     SWIG_DIR  /ad/eng/opt/64/swig-$version
 #
 #http://www.swig.org/Doc1.3/Library.html
 
-setenv        SWIG      "$SWIG_DIR"
-setenv        SWIG_LIB  "$SWIG_DIR/share/swig/$version"
-prepend-path  PATH      "$SWIG_DIR/bin"
+setenv        SWIG             "$SWIG_DIR"
+setenv        SWIG_LIB         "$SWIG_DIR/share/swig/$version"
+prepend-path  PATH             "$SWIG_DIR/bin"
+prepend-path  LIBRARY_PATH     "$SWIG_DIR/lib"
+prepend-path  LD_LIBRARY_PATH  "$SWIG_DIR/lib"
+prepend-path  CPATH            "$SWIG_DIR/include"
