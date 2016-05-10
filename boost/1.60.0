@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## Boost C++ Libraries
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tBoost C++ Libraries"
+	puts stderr "\thttp://www.boost.org"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"Boost C++ Libraries"
+
+# for Tcl script use only
+set     version      "1.60.0"
+set     BOOST_DIR    /ad/eng/opt/64/boost-$version
+
+setenv        BOOST_ROOT          "$BOOST_DIR"
+prepend-path  CPLUS_INCLUDE_PATH  "$BOOST_DIR/include"
+prepend-path  LIBRARY_PATH        "$BOOST_DIR/lib"
+prepend-path  LD_LIBRARY_PATH     "$BOOST_DIR/lib"
