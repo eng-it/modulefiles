@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## CUDA Toolkit
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tNVIDIA CUDA Toolkit"
+	puts stderr "\thttps://developer.nvidia.com/cuda-toolkit"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"NVIDIA CUDA Toolkit"
+
+# for Tcl script use only
+set     version     "6.0"
+set     CUDA_DIR    /ad/eng/opt/64/cuda/cuda-$version
+
+setenv        CUDA_PATH           "$CUDA_DIR"
+prepend-path  PATH                "$CUDA_DIR/bin"
+prepend-path  CPATH               "$CUDA_DIR/include"
+prepend-path  CPLUS_INCLUDE_PATH  "$CUDA_DIR/include"
+prepend-path  LIBRARY_PATH        "$CUDA_DIR/lib"
+prepend-path  LD_LIBRARY_PATH     "$CUDA_DIR/lib"
+prepend-path  LIBRARY_PATH        "$CUDA_DIR/lib64"
+prepend-path  LD_LIBRARY_PATH     "$CUDA_DIR/lib64"
+prepend-path  PKG_CONFIG_PATH     "$CUDA_DIR/pkgconfig"
