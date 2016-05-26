@@ -18,10 +18,13 @@ set     CAFFE_DIR   /ad/eng/opt/64/caffe-$version
 
 module load boost
 module load opencv
+module load ffmpeg
 
+setenv        CAFFE_FILES       "$CAFFE_DIR/caffe-files"
 prepend-path  PATH              "$CAFFE_DIR/bin"
 prepend-path  LD_LIBRARY_PATH   "$CAFFE_DIR/lib"
 prepend-path  LIBRARY_PATH      "$CAFFE_DIR/lib"
 prepend-path  INCLUDE           "$CAFFE_DIR/include"
 prepend-path  CPATH             "$CAFFE_DIR/include"
 prepend-path  PKG_CONFIG_PATH   "$CAFFE_DIR/lib/pkgconfig"
+prepend-path  PYTHONPATH        "$CAFFE_DIR/python"
