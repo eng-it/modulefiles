@@ -1,0 +1,39 @@
+#%Module1.0#####################################################################
+##
+## gEDA
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tgEDA: GPL-licensed Electronic Design Automation"
+	puts stderr "\thttp://www.geda-project.org/\n"
+	puts stderr "\tIncluded tools:"
+	puts stderr "\t * gschem: A schematic capture program"
+	puts stderr "\t * gnetlist: A netlist generation program"
+	puts stderr "\t * gsymcheck: A syntax checker for schematic symbols"
+	puts stderr "\t * gattrib: A spreadsheet programm that manipulates the"
+	puts stderr "\t   properties of symbols of a schematic"
+	puts stderr "\t * libgeda: Libraries for gschem gnetlist and gsymcheck"
+	puts stderr "\t * gsch2pcb: A tool to forward annotation from your"
+	puts stderr "\t   schematic to layout using PCB"
+        puts stderr "\n\tVersion $version\n"
+
+}
+
+module-whatis	"gEDA: GPL-licensed Electronic Design Automation"
+
+# for Tcl script use only
+set     version     "1.8"
+set     GEDA_DIR    /ad/eng/opt/64/geda-$version
+
+prepend-path  PATH                "$GEDA_DIR/bin"
+prepend-path  CPATH               "$GEDA_DIR/include"
+prepend-path  CPLUS_INCLUDE_PATH  "$GEDA_DIR/include"
+prepend-path  LIBRARY_PATH        "$GEDA_DIR/lib"
+prepend-path  LD_LIBRARY_PATH     "$GEDA_DIR/lib"
+prepend-path  LIBRARY_PATH        "$GEDA_DIR/lib64"
+prepend-path  LD_LIBRARY_PATH     "$GEDA_DIR/lib64"
+prepend-path  PKG_CONFIG_PATH     "$GEDA_DIR/pkgconfig"
+prepend-path  MANPATH             "$GEDA_DIR/doc/man"
+prepend-path  INFOPATH            "$GEDA_DIR/share/info"
+prepend-path  PKG_CONFIG_PATH     "$GEDA_DIR/lib/pkgconfig"
