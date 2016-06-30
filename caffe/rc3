@@ -20,6 +20,7 @@ module load boost
 module load opencv
 module load ffmpeg
 
+setenv        CAFFE_ROOT        "$CAFFE_DIR"
 setenv        CAFFE_FILES       "$CAFFE_DIR/caffe-files"
 prepend-path  PATH              "$CAFFE_DIR/bin"
 prepend-path  LD_LIBRARY_PATH   "$CAFFE_DIR/lib"
