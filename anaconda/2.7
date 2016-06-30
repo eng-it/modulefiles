@@ -22,3 +22,9 @@ prepend-path  PATH             $ANACONDA/bin/
 prepend-path  MANPATH          $ANACONDA/share/man/
 prepend-path  INCLUDE_PATH     $ANACONDA/include/
 prepend-path  CPATH            $ANACONDA/include/python2.7/
+prepend-path  LIBRARY_PATH     $ANACONDA/lib/
+prepend-path  LD_LIBRARY_PATH  $ANACONDA/lib/
+# If we don't set the TCL library explicitly, we could end up with a mix of
+# locally-installed TCL and Anaconda's TCL, which breaks the module command
+# (and probably other things).
+setenv        TCL_LIBRARY      $ANACONDA/lib/tcl8.5
