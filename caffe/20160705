@@ -1,6 +1,6 @@
 #%Module1.0#####################################################################
 ##
-## Caffe built from master branch on 2016-04-05
+## Caffe built from master branch on 2016-07-05
 ##
 proc ModulesHelp { } {
         global version
@@ -13,7 +13,7 @@ proc ModulesHelp { } {
 module-whatis   "Caffe Deep Learning Framework"
 
 # for Tcl script use only
-set     version     "20160405"
+set     version     "20160705"
 set     CAFFE_DIR   /ad/eng/opt/64/caffe-$version
 
 module load boost
