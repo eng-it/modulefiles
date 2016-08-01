@@ -24,6 +24,7 @@ set     version_name "R2015b"
 set     MATLAB_DIR   /ad/eng/opt/matlab-$version
 
 setenv        MATLAB_ROOT      "$MATLAB_DIR/"
+prepend-path  PATH             "$MATLAB_DIR/bin/"
 prepend-path  PATH             "$MATLAB_DIR/bin/glnxa64/"
 prepend-path  LIBRARY_PATH     "$MATLAB_DIR/bin/glnxa64/"
 prepend-path  LIBRARY_PATH     "$MATLAB_DIR/sys/os/glnxa64/"
