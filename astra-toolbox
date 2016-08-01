@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## ASTRA Tomography Toolbox
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tASTRA Tomography Toolbox"
+	puts stderr "\thttps://github.com/astra-toolbox/astra-toolbox"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"ASTRA Tomography Toolbox"
+
+module load matlab/8.6
+module load boost
+module load cuda/6.0
+module load anaconda
+
+# for Tcl script use only
+set     version      "1.7.1"
+set     ASTRA        /ad/eng/opt/64/astra-toolbox-$version
+
+setenv        ASTRA_ROOT       "$ASTRA/"
+prepend-path  LIBRARY_PATH     "$ASTRA/lib/"
+prepend-path  LD_LIBRARY_PATH  "$ASTRA/lib/"
+prepend-path  MATLABPATH       "$ASTRA/matlab/"
+prepend-path  MATLABPATH       "$ASTRA/matlab/tools/"
+prepend-path  MATLABPATH       "$ASTRA/matlab/mex/"
+prepend-path  PYTHONPATH       "$ASTRA/python/"
