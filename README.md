@@ -1,5 +1,5 @@
 # modulefiles
-Module files for managing user environments on the grid.
+Module files for managing user environments on the BU Engineering Grid.
 
 Example usage:
 
