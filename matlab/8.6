@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## MATLAB
+##
+proc ModulesHelp { } {
+        global version
+	global version_name
+
+        puts stderr "\tMATLAB Numerical Computing Environment"
+	puts stderr "\thttp://www.mathworks.com/products/matlab/"
+	puts stderr "\n\tNote that this module is only needed when using extra"
+	puts stderr "\tsoftware linked against the MATLAB libraries.  For use"
+	puts stderr "\tof MATLAB's GUI and included binaries, our wrapper"
+	puts stderr "\tscripts available as the default program names should do"
+	puts stderr "\tfine."
+        puts stderr "\n\tVersion $version ($version_name)\n"
+}
+
+module-whatis	"MATLAB Numerical Computing Environment"
+
+# for Tcl script use only
+set     version      "8.6"
+set     version_name "R2015b"
+set     MATLAB_DIR   /ad/eng/opt/matlab-$version
+
+setenv        MATLAB_ROOT      "$MATLAB_DIR/"
+prepend-path  PATH             "$MATLAB_DIR/bin/"
+prepend-path  PATH             "$MATLAB_DIR/bin/glnxa64/"
+prepend-path  LIBRARY_PATH     "$MATLAB_DIR/bin/glnxa64/"
+prepend-path  LIBRARY_PATH     "$MATLAB_DIR/sys/os/glnxa64/"
+prepend-path  LD_LIBRARY_PATH  "$MATLAB_DIR/bin/glnxa64/"
+prepend-path  LD_LIBRARY_PATH  "$MATLAB_DIR/sys/os/glnxa64/"
