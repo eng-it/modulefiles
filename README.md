@@ -1,5 +1,5 @@
 # modulefiles
-Module files for managing user environments on the BU Engineering Grid.
+[Module files] for managing user environments on the BU Engineering Grid.
 
 Example usage:
 
@@ -13,3 +13,5 @@ Example usage:
     $ module unload anaconda
     $ which python
     /usr/bin/python
+
+[Module files]: http://modules.sourceforge.net/
