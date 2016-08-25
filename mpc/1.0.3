@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## GNU MPC
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGNU MPC: High-Precision Complex Numbers"
+	puts stderr "\thttp://www.multiprecision.org/"
+        puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"GNU MPC"
+
+# for Tcl script use only
+set     version      "1.0.3"
+set     MPCDIR       /ad/eng/opt/64/mpc-$version
+
+prepend-path  LIBRARY_PATH     "$MPCDIR/lib"
+prepend-path  LD_LIBRARY_PATH  "$MPCDIR/lib"
+prepend-path  CPATH            "$MPCDIR/include"
+prepend-path  INFOPATH         "$MPCDIR/share/info"
