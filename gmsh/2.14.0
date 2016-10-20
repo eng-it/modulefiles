@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## Gmsh finite element mesh generator
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tGmsh 3D Finite Element Mesh Generator"
+	puts stderr "\thttp://gmsh.info"
+	puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "Gmsh 3D Finite Element Mesh Generator"
+
+# for Tcl script use only
+set     version   "2.14.0"
+set     GMSH_DIR  /ad/eng/opt/64/gmsh-$version
+
+setenv        GMSH_HOME        "$GMSH_DIR"
+prepend-path  PATH             "$GMSH_DIR/bin"
+prepend-path  MANPATH          "$GMSH_DIR/share/man"
