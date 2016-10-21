@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## SCUFF-EM: Surface-CUrrent-Field Formulation of ElectroMagnetism
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tSCUFF-EM Electromagnetics Analysis Software"
+	puts stderr "\thttps://github.com/HomerReid/scuff-em/"
+	puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "SCUFF-EM Electromagnetics Analysis Software"
+
+module load anaconda/2.7
+module load gmsh
+
+# for Tcl script use only
+set     version      "20161021"
+set     SCUFFEM_DIR  /ad/eng/opt/64/SCUFFEM-$version
+
+setenv        SCUFFEM_HOME     "$SCUFFEM_DIR"
+prepend-path  PATH             "$SCUFFEM_DIR/bin"
+prepend-path  LD_LIBRARY_PATH  "$SCUFFEM_DIR/lib"
+prepend-path  LIBRARY_PATH     "$SCUFFEM_DIR/lib"
+prepend-path  INCLUDE          "$SCUFFEM_DIR/include"
+prepend-path  CPATH            "$SCUFFEM_DIR/include"
+prepend-path  PYTHONPATH       "$SCUFFEM_DIR/lib/python2.7/site-packages"
