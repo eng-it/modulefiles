@@ -16,7 +16,7 @@ module load anaconda/2.7
 module load gmsh
 
 # for Tcl script use only
-set     version      "20161021"
+set     version      "20161024"
 set     SCUFFEM_DIR  /ad/eng/opt/64/SCUFFEM-$version
 
 setenv        SCUFFEM_HOME     "$SCUFFEM_DIR"
