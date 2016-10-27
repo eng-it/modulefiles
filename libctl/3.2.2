@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## libctl: flexible control files for scientific simulations
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tlibctl: flexible control files for scientific simulations"
+        puts stderr "\thttp://ab-initio.mit.edu/wiki/index.php/Libctl"
+        puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "libctl: flexible control files for scientific simulations"
+
+# If other modules are required, load them here with "module load name"
+
+# for Tcl script use only
+set     version      "3.2.2"
+set     LIBCTL_DIR   /ad/eng/opt/64/libctl-$version
+
+setenv        LIBCTL_HOME      "$LIBCTL_DIR"
+prepend-path  PATH             "$LIBCTL_DIR/bin"
+prepend-path  LD_LIBRARY_PATH  "$LIBCTL_DIR/lib"
+prepend-path  LIBRARY_PATH     "$LIBCTL_DIR/lib"
+prepend-path  INCLUDE          "$LIBCTL_DIR/include"
+prepend-path  CPATH            "$LIBCTL_DIR/include"
+prepend-path  MANPATH          "$LIBCTL_DIR/share/man"
