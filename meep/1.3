@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## Meep: MIT Electromagnetic Equation Propagation
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tmeep: FDTD electromagnetic simulator"
+        puts stderr "\thttp://ab-initio.mit.edu/wiki/index.php/Meep"
+        puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "meep: FDTD electromagnetic simulator"
+
+module load libctl
+
+# for Tcl script use only
+set     version    "1.3"
+set     MEEP_DIR   /ad/eng/opt/64/meep-$version
+
+setenv        MEEP_HOME        "$MEEP_DIR"
+prepend-path  PATH             "$MEEP_DIR/bin"
+prepend-path  LD_LIBRARY_PATH  "$MEEP_DIR/lib"
+prepend-path  LIBRARY_PATH     "$MEEP_DIR/lib"
+prepend-path  PKG_CONFIG_PATH  "$MEEP_DIR/lib/pkgconfig"
+prepend-path  INCLUDE          "$MEEP_DIR/include"
+prepend-path  CPATH            "$MEEP_DIR/include"
