@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## MPB: MIT Photonic-Bands
+##
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tmpb: MIT Photonic-Bands"
+        puts stderr "\thttp://ab-initio.mit.edu/wiki/index.php/MIT_Photonic_Bands"
+        puts stderr "\n\tVersion: $version\n"
+}
+
+module-whatis   "mpb: MIT Photonic-Bands"
+
+module load libctl
+
+# for Tcl script use only
+set     version    "1.5"
+set     MPB_DIR    /ad/eng/opt/64/mpb-$version
+
+setenv        MPB_HOME         "$MPB_DIR"
+prepend-path  PATH             "$MPB_DIR/bin"
+prepend-path  LD_LIBRARY_PATH  "$MPB_DIR/lib"
+prepend-path  LIBRARY_PATH     "$MPB_DIR/lib"
+prepend-path  INCLUDE          "$MPB_DIR/include"
+prepend-path  CPATH            "$MPB_DIR/include"
+prepend-path  MANPATH          "$MPB_DIR/share/man"
