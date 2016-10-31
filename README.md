@@ -14,4 +14,9 @@ Example usage:
     $ which python
     /usr/bin/python
 
+For instructions on creating a module file, see the [add a shell module]
+section of EXAMPLE.md in the [linux-builds] repository.
+
 [Module files]: http://modules.sourceforge.net/
+[linux-builds]: https://github.com/eng-it/linux-builds
+[add a shell module]: https://github.com/eng-it/linux-builds/blob/master/EXAMPLE.md#add-a-shell-module
