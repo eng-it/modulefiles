@@ -10,7 +10,7 @@ proc ModulesHelp { } {
 	puts stderr "\n\tVersion: $version\n"
 }
 
-module-whatis   "OpenCV: Open Source Computer Vision"
+module-whatis   "Open Source Computer Vision"
 
 # for Tcl script use only
 set     version     "3.1.0"
